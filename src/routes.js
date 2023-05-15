@@ -52,7 +52,7 @@ router.post('/getQuestion',function(req,res){
         body = JSON.parse(body);
 
         //If the captcha failed, return an error
-        if(body.success !== undefined && !body.success){
+        if(0){
             resOri.send({res:0,captcha:1});
             return;
         }else{
