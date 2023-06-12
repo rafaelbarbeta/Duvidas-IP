@@ -5,7 +5,7 @@ dotenv.config();
 //DB authentication
 var pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: {
+    ssl: process.env.DATABASE_DISABLE_SSL ? false : {
         rejectUnauthorized: false
     }
 });
