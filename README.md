@@ -24,8 +24,18 @@ um sistema de reconhecimento de estudante, com dados fornecidos pelo professor, 
 5. Com tudo instalado e preparado, basta inicializar o projeto no terminal com npm start.
 6. Após tudo isso, o projeto será inicializado em localhost:3000
 
+## Execução via Docker
+O site também pode operar em containers docker pré-configurados. Para executar, siga os passos:
+1. Instale o docker e o compose. Pode ser achado o tutorial nesse [site](https://docs.docker.com/engine/install/ubuntu/)
+2. Em um terminal com permissão "root", digite :
+```bash
+docker compose up
+```
+3. Pronto! O site está no ar em localhost:3000. Para fechar, apenas insira Ctrl-C no mesmo terminal
+4. (OPCIONAL) [Instale o docker para usuários sem privilégio](https://docs.docker.com/engine/security/rootless/)
+
 ## Autores
-Maurício Cândido de Souza & Michel Ribeiro Koba
+Maurício Cândido de Souza & Michel Ribeiro Koba & Rafael Barbeta
 
 ## Screenshots
 ![Img1](https://i.imgur.com/PasPO88.png)

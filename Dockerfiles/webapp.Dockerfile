@@ -8,6 +8,8 @@ WORKDIR /home/node/webapp
 
 COPY --chown=node:node . /home/node/webapp
 
+ENV DATABASE_DISABLE_SSL=true
+
 RUN npm install
 
 CMD ["node", "app.js"]

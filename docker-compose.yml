@@ -1,0 +1,41 @@
+version: "3.9"
+services:
+  webapp:
+    build:
+      context: .
+      dockerfile: ./Dockerfiles/webapp.Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      webdb:
+        ipv4_address: 172.16.10.2
+    container_name: webapp
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@172.16.10.3:5432/StudentDB
+  
+  postgres:
+    build:
+      context: .
+      dockerfile: ./Dockerfiles/pgdb.Dockerfile
+    expose:
+      - "5432"
+    container_name: postgres
+    networks:
+      webdb:
+        ipv4_address: 172.16.10.3
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+
+networks:
+  webdb:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.10.0/24
+
+        
