@@ -34,6 +34,18 @@ docker compose up
 3. Pronto! O site está no ar em localhost:3000. Para fechar, apenas insira Ctrl-C no mesmo terminal
 4. (OPCIONAL) [Instale o docker para usuários sem privilégio](https://docs.docker.com/engine/security/rootless/)
 
+# Modificando o banco de dados no Docker
+O banco de dados dentro do docker é persistente e pode ser alterado de duas formas:
+* Estaticamente : Adicionando um script .sql na pasta SQL.
+O container do postgres será inicializado com as querys presentes na pasta SQL. Logo, basta deixar  um script com as querys iniciais desejadas
+* Em tempo de execução : acessando o psql do container
+Se quiser alterar o banco de dados em quanto ele está "ativo", digite em um terminal
+```bash
+docker ps # pegue o ID de duvidas-ip_postgres
+docker exec -it id_aqui psql -U postgres -d StudentDB
+```
+Abrirá um terminal para inserção das querys.
+
 ## Autores
 Maurício Cândido de Souza & Michel Ribeiro Koba & Rafael Barbeta
 
