@@ -7,11 +7,11 @@ dotenv.config();
 
 const router = express.Router();
 
-router.get('/', function(req,res){
+router.get('/ipmonitoria', function(req,res){
     res.sendFile(path.resolve( __dirname+'/../view/index.html'))
 })
 
-router.get('/perguntar', function(req,res){
+router.get('/ipmonitoria/perguntar', function(req,res){
     res.sendFile(path.resolve(__dirname+'/../view/form.html'))
 })
 
@@ -19,11 +19,11 @@ router.get('404', function(req,res){
     res.sendFile(path.resolve(__dirname+'/../view/404.html'))
 })
 
-router.get('/search', function(req,res){
+router.get('/ipmonitoria/search', function(req,res){
     res.sendFile(path.resolve(__dirname+'/../view/search.html'))
 })
 
-router.post('/getQuestion',function(req,res){
+router.post('/ipmonitoria/getQuestion',function(req,res){
 
     let  regex = /[a-zA-Z]{2}\-[a-zA-Z]{4}\-\d{4}?$/;
 
@@ -69,7 +69,7 @@ router.post('/getQuestion',function(req,res){
     
 })
 
-router.post('/post', async function(req,res,next){
+router.post('/ipmonitoria/post', async function(req,res,next){
 
     let keyValores = ['ra','duvida','lista','ex'];
     let maxSize = [6,6000,2,2]
@@ -141,7 +141,7 @@ router.post('/post', async function(req,res,next){
     
     
 })
-router.post('/getEXList',function(req,res,next){
+router.post('/ipmonitoria/getEXList',function(req,res,next){
 
     dbmanager({op: 4, res: res},returnListsEx);
 

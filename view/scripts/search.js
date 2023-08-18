@@ -19,7 +19,7 @@ function checkValues(){
 function sendQuestion(protocol, token){
 
     $.ajax({
-        url:"/getQuestion",
+        url:"/ipmonitoria/getQuestion",
         dataType:"json",
         type:"post",
         data:{

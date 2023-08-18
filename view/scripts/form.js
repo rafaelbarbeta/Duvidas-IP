@@ -17,7 +17,7 @@ info.forEach(loadStoredInfo);
 //Gets all active lists from the database 
 function loadLists(){
     $.ajax({
-        url: "/getEXList",
+        url: "/ipmonitoria/getEXList",
         dataType: "json",
         type: "post",
         success:function(result){
@@ -84,7 +84,7 @@ function sendValues(token){
     let cardSucesso = document.getElementById("cardSucesso");
 
     $.ajax({
-        url:"/post",
+        url:"/ipmonitoria/post",
         dataType:"json",
         type:"post",
         data:{
