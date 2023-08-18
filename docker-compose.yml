@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: ./Dockerfiles/webapp.Dockerfile
     ports:
-      - "3000:3000"
+      - "2000:3000"
     networks:
       webdb:
         ipv4_address: 172.16.10.2
