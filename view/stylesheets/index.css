@@ -139,3 +139,15 @@
     
 
 }
+
+/* Modificação para o warning */
+#warningDiv{
+    text-align: center;
+    background-color: yellow;
+}
+
+#warningTxt{
+    color: black;
+    font-weight: 700;
+    font-size: 2em;
+}
